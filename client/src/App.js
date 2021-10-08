@@ -1,9 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router";
 import Home from "./pages/Home";
-import ThingsAHLL from "./pages/ThingsAHLL";
 import NavBar from "./pages/NavBar";
 import Examples from "./pages/Examples";
 import Register from "./pages/Register";
@@ -21,9 +19,10 @@ function App() {
             <ProtectedRoute exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/' component={ConcertSearch} />
+            <Route exact path='/venue/:id' component={VenueCalendar} />
 
-            <Route exact path="/thingsahll" component={ThingsAHLL} />
-            <Route exact path="/examples" component={Examples} />
             <Route component={() => <p>react router 404 path not found</p>} />
           </Switch>
         </Container>

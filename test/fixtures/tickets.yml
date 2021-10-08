@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concert: MyString
+  price: 1.5
+  time: 2021-10-08 11:20:24
+  venue: one
+
+two:
+  concert: MyString
+  price: 1.5
+  time: 2021-10-08 11:20:24
+  venue: two

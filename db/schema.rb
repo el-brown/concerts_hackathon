@@ -10,15 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_22_205451) do
+ActiveRecord::Schema.define(version: 2021_10_08_172338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artist_venues", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "venue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_artist_venues_on_user_id"
+    t.index ["venue_id"], name: "index_artist_venues_on_venue_id"
+  end
 
   create_table "things", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "concert"
+    t.float "price"
+    t.datetime "time"
+    t.bigint "venue_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["venue_id"], name: "index_tickets_on_venue_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,10 +64,24 @@ ActiveRecord::Schema.define(version: 2021_09_22_205451) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "genre"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  create_table "venues", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.integer "ticket_capacity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "artist_venues", "users"
+  add_foreign_key "artist_venues", "venues"
+  add_foreign_key "tickets", "venues"
 end
