@@ -20,7 +20,7 @@ const AuthProvider = (props) => {
       let res = await axios.post("/api/auth", user);
       console.log(res);
       setUser(res.data.data);
-      history.push("/");
+      history.push("/user");
     } catch (err) {
       // want to handle this in your UI for you sake
       setError(err.response.data.errors ? err.response.data.errors.full_messages : err.response.data);

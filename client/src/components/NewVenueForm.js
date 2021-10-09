@@ -97,8 +97,7 @@ const NewVenueForm = () => {
         <Form.Field
           id='form-button-control-public'
           control={Button}
-          content='Confirm'
-          label='Label'
+          content='Submit'
         />
       </Form>
   </div>
