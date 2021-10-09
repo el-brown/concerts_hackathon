@@ -12,6 +12,7 @@ import User from "./pages/User";
 import CreateConcert from "./pages/CreateConcert";
 import EditUser from "./components/userComponents/EditUser";
 import ViewVenues from "./pages/ViewVenues";
+import Tickets from "./pages/Tickets";
 
 function App() {
   return (

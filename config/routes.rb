@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     #   resources :tickets
     # end
     resources :venues 
-      resources :tickets
+    resources :tickets
     
+    get '/artistVenue', to: 'artist_venue#artistAndVenue'
+
   end
 end

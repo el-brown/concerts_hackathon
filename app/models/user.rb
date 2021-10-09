@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
-  has_many :artist_venues
+  has_many :artist_venues, dependent: :destroy
   has_many :venues, through: :artist_venues
 
   def self.safe_all_data
