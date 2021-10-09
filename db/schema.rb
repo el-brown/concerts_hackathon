@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 2021_10_08_172338) do
     t.index ["venue_id"], name: "index_artist_venues_on_venue_id"
   end
 
-  create_table "things", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "tickets", force: :cascade do |t|
     t.string "concert"
     t.float "price"
