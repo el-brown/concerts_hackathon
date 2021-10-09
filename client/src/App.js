@@ -12,6 +12,8 @@ import User from "./pages/User";
 import CreateConcert from "./pages/CreateConcert";
 import EditUser from "./components/userComponents/EditUser";
 import ViewVenues from "./pages/ViewVenues";
+import About from "./pages/About";
+import Tickets from "./pages/Tickets";
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
             <Route exact path="/createconcert" component={CreateConcert} />
             {/* <ProtectedRoute exact path="/maketickets" component={MakeTickets} /> */}
             
+            <Route exact path="/tickets" component={Tickets} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path='/artists' component={ViewArtists} />

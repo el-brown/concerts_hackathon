@@ -1,16 +1,27 @@
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
+import TicketForm from './TicketForm'
 
 const Venue = (props) => {
+  const [showForm, setShowForm] = useState(false)
 
   const {v} = props
 
+
 return (
+  <>
     <div style= {styles.card}>
       <h3>{v.name}</h3>
       <p>{v.street}</p>
       <p>{v.city}</p>
       <p>{v.state}</p>
       <p>Ticket Capacity: {v.ticket_capacity}</p>
+      <Button onClick={(()=>{setShowForm(!showForm)})}>Get Tickets</Button>
+      { showForm && <TicketForm /> }
+      
     </div>
+  </>
   )
 
 }

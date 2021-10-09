@@ -6,7 +6,7 @@ const Tickets = () => {
   const [venues, setVenues] = useState([]);
   
   useEffect(() => {
-    getTickets();
+    getTickets()
   }, []);
 
 
@@ -46,43 +46,35 @@ const Tickets = () => {
 
 
   const renderVenues = () => {
-    return venues.map((s) => {
+    return venues.map((v) => {
       return (
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some </p>
+        <div className="card" style="width: 18rem;">
+        <img className="card-img-top" src="..." alt="Card image cap" />
+        <div className="card-body">
+          <h5 className="card-title">Card title</h5>
+          <p className="card-text">Some </p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">{v.venue_name}</li>
-          <li class="list-group-item">{v.street}</li>
-          <li class="list-group-item">{v.city}</li>
-          <li class="list-group-item">{v.state}</li>
-          <li class="list-group-item">{v.ticket_capacity}</li>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">{v.venue_name}</li>
+          <li className="list-group-item">{v.street}</li>
+          <li className="list-group-item">{v.city}</li>
+          <li className="list-group-item">{v.state}</li>
+          <li className="list-group-item">{v.ticket_capacity}</li>
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
+        <div className="card-body">
+          <a href="#" className="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
-          {renderTickets(v.tickets)}
+          {/* {renderTickets(v.tickets)} */}
         </div>
       </div>
       )
-        {/* <List>
-          <List.Content>{v.venue_name}</List.Content>
-          <List.Content>{v.street}</List.Content>
-          <List.Content>{v.city}</List.Content>
-          <List.Content>{v.state}</List.Content>
-          <List.Content>{v.ticket_capacity}</List.Content>
-          {renderTickets(v.tickets)}
-        </List> */}
     })
-    },
-  }
+    }
+
 
   const renderTickets = (tickets) => {
-    return tickets.map((p) => {
-      {console.log("concert:", t.concert)}
+    return tickets.map((t) => {
+      console.log("concert:", t.concert)
       return (
         <Card fluid>
           <Card.Content>${t.price}</Card.Content>
