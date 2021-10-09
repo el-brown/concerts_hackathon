@@ -12,8 +12,12 @@ const Navbar = (props) => {
     if (user) {
       return (  
       <>
+      <Link to="/createconcert">
         <Menu.Item active={location.pathname == "/createconcert"}>Create Concert</Menu.Item>
-        <Menu.Item active={location.pathname == "/user/:id"}>Profile</Menu.Item>
+      </Link>
+      <Link to='/user/'>
+        <Menu.Item active={location.pathname == "/user/"}>Profile</Menu.Item>
+      </Link>
         <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
       </>
       );

@@ -37,7 +37,7 @@ const AuthProvider = (props) => {
       let res = await axios.post("/api/auth/sign_in", user);
       console.log(res);
       setUser(res.data.data);
-      history.push("/");
+      history.push("/user");
     } catch (err) {
       // will hit catch if user is not db, bad usename or password
       // coundn't find email...
@@ -60,6 +60,7 @@ const AuthProvider = (props) => {
         loading,
         error,
         user,
+        setUser,
         handleRegister,
         handleLogin,
         handleLogout,

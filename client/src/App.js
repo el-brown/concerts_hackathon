@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ViewArtists from "./pages/ViewArtists";
 import User from "./pages/User";
 import CreateConcert from "./pages/CreateConcert";
+import EditUser from "./components/userComponents/EditUser";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Container>
           <Switch>
 
-            <Route exact path="/user/:id" component={User} />
+            <Route exact path="/user" component={User} />
+            <Route exact path="/user/edit" component={EditUser} />
             <Route exact path="/createconcert" component={CreateConcert} />
             {/* <ProtectedRoute exact path="/maketickets" component={MakeTickets} /> */}
             
