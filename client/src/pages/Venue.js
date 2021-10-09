@@ -1,7 +1,7 @@
 
 const Venue = (props) => {
 
-  const {v, deleteVenue} = props
+  const {v} = props
 
 return (
     <div style= {styles.card}>

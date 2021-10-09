@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import NewVenueForm from '../components/NewVenueForm';
 import Venue from './Venue';
 
 function ViewVenues(props) {
@@ -33,6 +34,7 @@ function ViewVenues(props) {
     <div>
       <h2>Venues</h2>
       {renderVenues()}
+
     </div>
   )
 }
