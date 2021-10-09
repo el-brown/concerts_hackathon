@@ -11,9 +11,14 @@ const Navbar = (props) => {
   const rightNavItems = () => {
     if (user) {
       return (  
+      <>
+        <Menu.Item active={location.pathname == "/createconcert"}>Create Concert</Menu.Item>
+        <Menu.Item active={location.pathname == "/user/:id"}>Profile</Menu.Item>
         <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
+      </>
       );
     };
+
       return (
         <>
           <Link to="/login">
@@ -33,6 +38,12 @@ const Navbar = (props) => {
       <Link to="/">
         <Menu.Item active={location.pathname == "/"}>Home</Menu.Item>
       </Link>
+      <Link to="/">
+        <Menu.Item active={location.pathname == "/artists"}>Find Artists</Menu.Item>
+      </Link>
+      {/* <Link to="/">
+        <Menu.Item active={location.pathname == "/"}>Venues</Menu.Item>
+      </Link> */}
       <Menu.Menu position="right">{rightNavItems()}</Menu.Menu>
     </Menu>
   );

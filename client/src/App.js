@@ -2,12 +2,14 @@ import "./App.css";
 import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router";
 import Home from "./pages/Home";
-import NavBar from "./pages/NavBar";
-import Examples from "./pages/Examples";
+import NavBar from "./components/NavBar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FetchUser from "./components/FetchUser";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ViewArtists from "./pages/ViewArtists";
+import User from "./pages/User";
+import CreateConcert from "./pages/CreateConcert";
 
 function App() {
   return (
@@ -16,12 +18,19 @@ function App() {
       <FetchUser>
         <Container>
           <Switch>
-            <ProtectedRoute exact path="/" component={Home} />
+
+            <Route exact path="/user/:id" component={User} />
+            <Route exact path="/createconcert" component={CreateConcert} />
+            {/* <ProtectedRoute exact path="/maketickets" component={MakeTickets} /> */}
+            
+            <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/' component={ConcertSearch} />
-            <Route exact path='/venue/:id' component={VenueCalendar} />
+            <Route exact path='/artists' component={ViewArtists} />
+            {/* <Route exact path='/graphs' component={Graphs} /> */}
+            {/* <Route exact path='/artist/:id' component={ViewArtist} /> */}
+            {/* <Route exact path='/venues' component={ViewVenues} /> */}
+            {/* <Route exact path='/venue/:id' component={VenueCalendar} /> */}
 
             <Route component={() => <p>react router 404 path not found</p>} />
           </Switch>
