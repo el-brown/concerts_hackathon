@@ -38,12 +38,12 @@ const Navbar = (props) => {
       <Link to="/">
         <Menu.Item active={location.pathname == "/"}>Home</Menu.Item>
       </Link>
-      <Link to="/">
+      <Link to="/artists">
         <Menu.Item active={location.pathname == "/artists"}>Find Artists</Menu.Item>
       </Link>
-      {/* <Link to="/">
-        <Menu.Item active={location.pathname == "/"}>Venues</Menu.Item>
-      </Link> */}
+      <Link to="/venues">
+        <Menu.Item active={location.pathname == "/venues"}>Venues</Menu.Item>
+      </Link>
       <Menu.Menu position="right">{rightNavItems()}</Menu.Menu>
     </Menu>
   );

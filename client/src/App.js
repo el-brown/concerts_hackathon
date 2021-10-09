@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ViewArtists from "./pages/ViewArtists";
 import User from "./pages/User";
 import CreateConcert from "./pages/CreateConcert";
+import ViewVenues from "./pages/ViewVenues";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
             <Route exact path='/artists' component={ViewArtists} />
             {/* <Route exact path='/graphs' component={Graphs} /> */}
             {/* <Route exact path='/artist/:id' component={ViewArtist} /> */}
-            {/* <Route exact path='/venues' component={ViewVenues} /> */}
+            <Route exact path='/venues' component={ViewVenues} />
             {/* <Route exact path='/venue/:id' component={VenueCalendar} /> */}
 
             <Route component={() => <p>react router 404 path not found</p>} />
