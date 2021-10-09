@@ -51,6 +51,9 @@ const Navbar = (props) => {
       <Link to="/venues">
         <Menu.Item active={location.pathname == "/venues"}>Venues</Menu.Item>
       </Link>
+      <Link to="/concert">
+        <Menu.Item active={location.pathname == "/concert"}>Calender</Menu.Item>
+      </Link>
       <Menu.Menu position="right">{rightNavItems()}</Menu.Menu>
     </Menu>
   );

@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ViewArtists from "./pages/ViewArtists";
 import User from "./pages/User";
 import CreateConcert from "./pages/CreateConcert";
+import ConcertCal from "./pages/ConcertCal";
 import EditUser from "./components/userComponents/EditUser";
 import ViewVenues from "./pages/ViewVenues";
 import About from "./pages/About";
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/user" component={User} />
             <Route exact path="/user/edit" component={EditUser} />
             <Route exact path="/createconcert" component={CreateConcert} />
+            <Route exact path="/concert" component={ConcertCal} />
             {/* <ProtectedRoute exact path="/maketickets" component={MakeTickets} /> */}
             
             <Route exact path="/tickets" component={Tickets} />
