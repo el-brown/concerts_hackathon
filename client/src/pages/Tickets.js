@@ -6,7 +6,7 @@ const Tickets = () => {
   const [venues, setVenues] = useState([]);
   
   useEffect(() => {
-    getTickets();
+    getTickets()
   }, []);
 
 
@@ -64,26 +64,18 @@ const Tickets = () => {
         </ul>
         <div className="card-body">
           <a href="#" className="card-link">Card link</a>
-          <a href="#" className="card-link">Another link</a>
+          <a href="#" class="card-link">Another link</a>
           {/* {renderTickets(v.tickets)} */}
         </div>
       </div>
       )
-        {/* <List>
-          <List.Content>{v.venue_name}</List.Content>
-          <List.Content>{v.street}</List.Content>
-          <List.Content>{v.city}</List.Content>
-          <List.Content>{v.state}</List.Content>
-          <List.Content>{v.ticket_capacity}</List.Content>
-          {renderTickets(v.tickets)}
-        </List> */}
     })
     }
-  
+
 
   const renderTickets = (tickets) => {
     return tickets.map((t) => {
-      // {console.log("concert:", t.concert)}
+      console.log("concert:", t.concert)
       return (
         <h1>Hi</h1>
         // <Card fluid>
