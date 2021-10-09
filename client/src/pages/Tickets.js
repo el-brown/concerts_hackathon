@@ -30,7 +30,8 @@ const Tickets = () => {
           id: t.id
         }
       })
-      return { venue_name, ticket_capacity, street, city, state, tickets: venueTickets};
+      console.log("normdata", { tickets: venueTickets})
+      return { tickets: venueTickets};
     });
   };
 
@@ -76,12 +77,13 @@ const Tickets = () => {
     return tickets.map((t) => {
       console.log("concert:", t.concert)
       return (
-        <Card fluid>
-          <Card.Content>${t.price}</Card.Content>
-          <Card.Content>{t.time}</Card.Content>
-          <Card.Content>{t.concert}</Card.Content>
-          <Card.Content>{t.quantity_in_stock}</Card.Content>
-        </Card>
+        <h1>Hi</h1>
+        // <Card fluid>
+        //   {/* <Card.Content>${t.price}</Card.Content>
+        //   <Card.Content>{t.time}</Card.Content>
+        //   <Card.Content>{t.concert}</Card.Content>
+        //   <Card.Content>{t.quantity_in_stock}</Card.Content> */}
+        // </Card>
       )
     })
   }

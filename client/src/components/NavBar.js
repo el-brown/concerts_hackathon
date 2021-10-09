@@ -46,7 +46,7 @@ const Navbar = (props) => {
         <Menu.Item active={location.pathname == "/"}>About</Menu.Item>
       </Link>
       <Link to="/artists">
-        <Menu.Item active={location.pathname == "/artists"}>Find Artists</Menu.Item>
+        <Menu.Item active={location.pathname == "/artists"}>Artists</Menu.Item>
       </Link>
       <Link to="/venues">
         <Menu.Item active={location.pathname == "/venues"}>Venues</Menu.Item>
