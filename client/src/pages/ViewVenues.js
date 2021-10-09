@@ -32,7 +32,7 @@ function ViewVenues(props) {
 
   return (
     <div>
-      <h2>Venues</h2>
+      <h1>Venues</h1>
       {renderVenues()}
 
     </div>
