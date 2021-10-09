@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Venue from './Venue';
 
 function ViewVenues(props) {
   const [venues, setVenues] = useState([])
@@ -17,22 +18,12 @@ function ViewVenues(props) {
     };
   };
 
-  // const deleteReward = async(id) => {
-  //   try {
-  //     await axios.delete(`/api/venues/${venue_id}`)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
   
   const renderVenues = () => {
     return venues.map((v) => {
       return (
         <div key={v.id}>
-          <p>venue</p>
-          <p>{v.name}</p>
-          <p>{v.city}</p>
-          {/* <Venue venue={v} deleteReward={deleteReward} /> */}
+          <Venue v={v} />
         </div>
       );
     });
