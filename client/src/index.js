@@ -8,6 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import AuthProvider from './providers/AuthProvider';
 import { initMiddleware, } from 'devise-axios';
 
+
 initMiddleware();
 
 ReactDOM.render(
